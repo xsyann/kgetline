@@ -20,6 +20,14 @@ On success, **kgetline() return the number of characters read, not including the
 
 **kgetline()** return -1 on failure to read a line (including end-of-file condition).
 
+###Example
+
+    cd test
+    make
+    sudo insmod kgetline-test.ko
+    sudo rmmod kgetline-test
+    dmesg | tail -n 13
+
 ------------------------------
 
 ###File Handling
