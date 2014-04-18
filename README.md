@@ -24,9 +24,10 @@ On success, **kgetline() return the number of characters read, not including the
 
     cd test
     make
+    sudo dmesg -c > /dev/null
     sudo insmod kgetline-test.ko
     sudo rmmod kgetline-test
-    dmesg | tail -n 13
+    dmesg
 
 ------------------------------
 

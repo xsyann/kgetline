@@ -5,7 +5,7 @@
 ** Contact <contact@xsyann.com>
 **
 ** Started on  Fri Mar 14 10:04:32 2014 xsyann
-** Last update Fri Apr 18 22:23:56 2014 xsyann
+** Last update Fri Apr 18 22:26:53 2014 xsyann
 */
 
 #include <linux/module.h>
@@ -49,7 +49,7 @@ static int init_test(void)
 
 static void cleanup_test(void)
 {
-        printk(KERN_INFO "Unload syscall\n");
+        printk(KERN_INFO "Unload Module\n");
 }
 
 module_init(init_test);
