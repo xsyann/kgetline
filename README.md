@@ -4,7 +4,7 @@ kgetline
 Linux kernel version of libc getline()
 
 ###Synopsis
-    ssize_t kgetline(char **lineptr, size_t *n, kfile *stream);
+    ssize_t kgetline(char **lineptr, size_t *n, struct file *stream);
 
 ###Description
 **kgetline()** reads an entire line from `stream`, storing the address of the buffer containing the text into `*lineptr`. The buffer is null-terminated and **do not** includes the newline character.
@@ -32,10 +32,8 @@ On success, **kgetline() return the number of characters read, not including the
 
 ###File Handling
 
-    typedef struct file kfile;
-
-    kfile           *kopen(const char *filename, int flags, umode_t mode);
-    void            kclose(kfile *f);
-    ssize_t         kread(kfile *file, char __user *buf, size_t count);
+    struct file *kopen(const char *filename, int flags, umode_t mode);
+    void kclose(struct file *f);
+    ssize_t kread(struct file *file, char __user *buf, size_t count);
 
 Are convenient functions for file handling.
